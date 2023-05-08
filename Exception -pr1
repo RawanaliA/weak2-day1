@@ -1,0 +1,129 @@
+import jdk.dynalink.Operation;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {2, 33, 4, 33, 1, 2, 6, 7};
+        int[] longest = {4, 7, 8};
+        hello();
+       try {
+           Scanner sc = new Scanner(System.in);
+           String sentence = sc.nextLine();
+           countV(sentence);
+           int[] arra = {1, 3,3,5,6};
+           uniq(arra);
+           compineSt("Rawan", "Ali");
+         int n1=sc.nextInt();
+           int n2=sc.nextInt();
+           int n3=sc.nextInt();
+         Th_max(n1,n2,n3);
+        avr_s(20, 34, 67);
+        calc(60, 70);
+        String st="Rawan will be a strong programmer";
+        System.out.println("Enter a sentence :");
+       
+        sp_lite("just keep going");}
+       catch (InputMismatchException e1){
+           System.out.println(e1.getMessage());
+       }catch (IllegalArgumentException e2){
+           System.out.println("Pass a String");
+       }
+       catch (ArithmeticException e3){
+          
+
+       }
+    }
+
+    public static int[] hello() {
+        System.out.println("Hello world!");
+
+        return new int[0];
+    }
+
+    public static String compineSt(String s1, String s2) throws IllegalArgumentException {
+        System.out.printf("pass a String");
+        String s3 = s1 + s2;
+        System.out.println("the combiend Name:" + s3);
+        return s3;
+    }
+    public static int Th_max(int n1, int n2, int n3) throws InputMismatchException{
+        int greatest1;
+        greatest1 = Math.max(n1, n2);
+        int greatest2 = Math.max(greatest1, n3);
+
+        return greatest1;
+        throw new InputMismatchException();
+
+    }
+
+    public static int avr_s(int num1, int num2, int num3)throws RuntimeException {
+        int sum = num1 + num2 + num3;
+        int avr = sum / 3;
+        System.out.printf("The Result" + avr);
+        return avr;
+    }
+
+    //
+    public static int calc(int nn, int mm)throws InputMismatchException{
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter on of these operatain :+ * % /");
+        char opr = s.next().charAt(0);
+        System.out.println("enter number 1:");
+        int n1 = s.nextInt();
+        System.out.println("enter number 2:");
+        int n2 = s.nextInt();
+            switch (opr) {
+                case '+':
+                    System.out.println("The result addition" + nn + mm);
+                    break;
+                case '*':
+                    System.out.println("The result multiplication" + nn * mm);
+                    break;
+                case '/':
+                    System.out.println("The result divided" + nn / mm);
+                    break;
+                case '%':
+                    System.out.println("The result mode" + nn % mm);
+                    break;
+                default:
+                    System.out.println("Wrong operatin");
+            }
+            return opr;
+    }
+
+    public static void uniq(int[]arr) throws InputMismatchException {
+
+        int c = 0;
+        for (int u = 0; u <= arr.length; u++) {
+            for (int j = u + 1; j <= arr.length; j++) {
+                if (arr[u] == arr[j]) {
+                    System.out.println("it is  NOT a uniqe numnber" + c);
+                    c++;
+                    break;
+                } else {
+                    System.out.println("it is uniqe" + c);
+                }
+            }
+        }
+    }
+       public static int countV(String str) throws Exception {
+           int vowelCount = 0;
+           for (int i = 0; i < str.length(); i++) {
+               char ch=str.charAt(i);
+               if (ch == 'a' | ch == 'e' | ch == 'i' | ch == 'o' | ch == 'u') {
+                   vowelCount++;
+               }
+           }
+           System.out.printf("The number of Voeuls in a given sentence is"+vowelCount);
+           return vowelCount;
+       }
+    public static void sp_lite(String last){
+        for (int sp = 0; sp <= last.charAt('j'); sp++) {
+            System.out.println("" + last.split(""));
+        }
+    }
+}
+
+
